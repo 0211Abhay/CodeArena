@@ -163,7 +163,7 @@ function executeCode() {
   );
 
   $.ajax({
-    url: "http://10.80.2.206/HCD_Project/services/compiler.php",
+    url: "http://10.80.2.206/CodeArena/services/compiler.php",
     method: "POST",
     data: {
       language: $("#language-selector").val(),
