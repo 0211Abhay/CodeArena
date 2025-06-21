@@ -8,7 +8,7 @@ header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
 
 // Setup
-$apiUrl = "http://10.80.2.206:2358/submissions/batch?base64_encoded=true&wait=true";
+$apiUrl = "http://10.80.1.28:2358/submissions/batch?base64_encoded=true&wait=true";
 $languageIds = [
     "c" => 50,
     "cpp" => 52,
