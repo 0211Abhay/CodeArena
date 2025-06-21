@@ -1,0 +1,360 @@
+:root {
+  --primary: #4361ee;
+  --secondary: #3f37c9;
+  --success: #4cc9f0;
+  --danger: #f72585;
+  --warning: #f8961e;
+  --info: #56cfe1;
+  --dark: #2b2d42;
+  --light: #f8f9fa;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --gray-light: #e9ecef;
+  --ui-font: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --code-font: "Consolas", "Monaco", "Courier New", monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: 'Consolas', 'Monaco', 'Courier New', monospace; */
+}
+
+body {
+  background-color: #f5f5f5;
+  color: var(--dark);
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: var(--ui-font);
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Main Content Styles */
+main {
+  display: flex;
+  margin-top: 20px;
+  height: calc(100vh - 100px);
+}
+
+/* Problem Panel */
+.problem-panel {
+  flex: 0 0 40%;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  overflow: auto;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.problem-header {
+  padding: 20px;
+  border-bottom: 1px solid var(--gray-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.problem-title {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.problem-difficulty {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: #e9fae9;
+  color: #3a9953;
+}
+
+.problem-difficulty.easy {
+  background-color: #fff8e6;
+  color: #3a9953;
+}
+
+.problem-difficulty.medium {
+  background-color: #fff8e6;
+  color: #e69711;
+}
+
+.problem-difficulty.hard {
+  background-color: #feecec;
+  color: #e54646;
+}
+
+.problem-meta {
+  display: flex;
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--gray-light);
+  color: var(--gray);
+  font-size: 14px;
+}
+
+.problem-meta div {
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.problem-meta i {
+  margin-right: 5px;
+}
+
+.problem-content {
+  padding: 20px;
+  flex: 1;
+  overflow: auto;
+  line-height: 1.6;
+}
+
+.problem-content h3 {
+  margin: 15px 0 8px;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--dark);
+}
+
+.problem-content p {
+  margin-bottom: 16px;
+}
+
+.problem-content code {
+  background-color: var(--gray-light);
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-family: var(--code-font); /* Updated to use Consolas */
+  font-size: 0.9em;
+}
+
+.code-example {
+  background-color: var(--gray-light);
+  padding: 12px;
+  border-radius: 5px;
+  margin: 10px 0;
+  font-family: var(--code-font); /* Updated to use Consolas */
+  white-space: pre-wrap;
+  font-size: 14px;
+}
+
+.problem-content ul {
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+
+.problem-content li {
+  margin-bottom: 6px;
+}
+
+.problem-tags {
+  padding: 15px 20px;
+  border-top: 1px solid var(--gray-light);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background-color: var(--gray-light);
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin: 5px;
+  font-size: 12px;
+  color: var(--gray-dark);
+}
+
+/* Editor Panel */
+.editor-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.editor-header {
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--gray-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.language-select {
+  display: flex;
+  align-items: center;
+}
+
+.language-select select {
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: 1px solid var(--gray-light);
+  background-color: white;
+  margin-left: 10px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.editor-actions button {
+  background-color: var(--gray-light);
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.editor-actions button:hover {
+  background-color: var(--gray);
+  color: white;
+}
+
+.editor-actions button.run {
+  background-color: var(--primary);
+  color: white;
+}
+
+.editor-actions button.run:hover {
+  background-color: var(--secondary);
+}
+
+.editor-actions button.submit {
+  background-color: var(--success);
+  color: white;
+}
+
+.editor-actions button.submit:hover {
+  background-color: var(--info);
+}
+
+/* CodeMirror Custom Styles */
+.editor-container {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  font-family: var(--code-font); /* Updated to use Consolas */
+  font-size: 14px;
+}
+
+.CodeMirror {
+  height: 100%;
+  font-family: var(
+    --code-font
+  ) !important; /* Updated to use Consolas with !important */
+  font-size: 14px;
+}
+
+.editor-footer {
+  padding: 15px 20px;
+  border-top: 1px solid var(--gray-light);
+}
+
+.test-cases {
+  margin-bottom: 15px;
+}
+
+.test-case-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--gray-light);
+  margin-bottom: 10px;
+}
+
+.test-case-tab {
+  padding: 8px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  border-bottom: 2px solid transparent;
+}
+
+.test-case-tab.active {
+  border-bottom: 2px solid var(--primary);
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.test-case-content {
+  padding: 10px;
+  background-color: var(--gray-light);
+  border-radius: 5px;
+}
+
+.custom-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--gray-light);
+  border-radius: 5px;
+  font-family: var(--code-font); /* Updated to use Consolas */
+  resize: vertical;
+  min-height: 80px;
+}
+
+.output-panel {
+  padding: 15px;
+  background-color: #2d2d2d;
+  color: white;
+  border-radius: 5px;
+  font-family: var(--code-font); /* Updated to use Consolas */
+  overflow: auto;
+  height: 100px;
+}
+
+/* Utilities */
+.badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+.badge-success {
+  background-color: #e9fae9;
+  color: #3a9953;
+}
+
+.badge-warning {
+  background-color: #fff8e6;
+  color: #e69711;
+}
+
+.badge-danger {
+  background-color: #feecec;
+  color: #e54646;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  main {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .problem-panel,
+  .editor-panel {
+    flex: 1;
+    margin-right: 0;
+    margin-bottom: 20px;
+    height: auto;
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+}
