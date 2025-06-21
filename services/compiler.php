@@ -7,16 +7,7 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
 
-// Input from frontend
-$language = strtolower($_POST['language']);
-$code = $_POST['code'];
-$question_id = $_POST['question_id'] ?? null;
-$enrollment_no = $_SESSION['user'] ?? null;
 
-if (!$question_id || !$enrollment_no) {
-    echo "Error: Missing question_id or user not logged in.";
-    exit;
-}
 
 // Fetch question details
 try {

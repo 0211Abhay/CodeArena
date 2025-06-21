@@ -156,22 +156,60 @@ resetButton.addEventListener("click", function () {
 //         }
 //     });
 // }
-
 function executeCode() {
-  const questionId = new URLSearchParams(window.location.search).get(
-    "question_id"
-  );
+  const questionId = new URLSearchParams(window.location.search).get("question_id");
+  const language = $("#language-selector").val();
+  const code = editor.getValue();
+  const outputPanel = $("#output-panel");
 
-  $.ajax({
-    url: "http://10.80.2.206/CodeArena/services/compiler.php",
-    method: "POST",
-    data: {
-      language: $("#language-selector").val(),
-      code: editor.getValue(),
-      question_id: questionId,
-    },
-    success: function (response) {
-      $("#output-panel").html(response.replace(/\n/g, "<br>"));
-    },
-  });
+  outputPanel.html("> Submitting 100 batch executions...<br>");
+
+  let successCount = 0;
+  let failureCount = 0;
+  const totalRequests = 100;
+
+  for (let i = 1; i <= totalRequests; i++) {
+    $.ajax({
+      url: "http://10.80.1.28/CodeArena/services/batch_compile.php",
+      method: "POST",
+      data: {
+        language: language,
+        code: code,
+        question_id: questionId,
+      },
+      success: function (response) {
+        successCount++;
+        appendOutput(i, true, response);
+        checkDone();
+      },
+      error: function (xhr) {
+        failureCount++;
+        const errorMsg = xhr.responseText || "Unknown error";
+        appendOutput(i, false, errorMsg);
+        checkDone();
+      },
+    });
+  }
+
+  function appendOutput(runNum, isSuccess, content) {
+    const prefix = isSuccess ? "[✔]" : "[✖]";
+    const color = isSuccess ? "#4caf50" : "#f44336";
+    outputPanel.append(
+      `<div style="color: ${color}; margin-bottom: 12px;">
+        ${prefix} Run ${runNum}:\n${content.replace(/\n/g, "<br>")}
+      </div><hr style="border: none; border-top: 1px solid #444;">`
+    );
+  }
+
+  function checkDone() {
+    if (successCount + failureCount === totalRequests) {
+      outputPanel.append(`<div style="font-weight: bold;">✅ All done: ${successCount} Success, ❌ ${failureCount} Failed</div>`);
+    }
+  }
 }
+
+// Clear output button
+const clearButton = document.querySelector(".clear-output");
+clearButton.addEventListener("click", function () {
+  document.getElementById("output-panel").innerHTML = "> Output cleared.";
+});
