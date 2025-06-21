@@ -1,5 +1,6 @@
 <?php
 require_once '../../config/sql.config.php';
+
 require '../../vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
 $dotenv->load();
@@ -51,6 +52,7 @@ try {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/css/css.min.js"></script>
     
     <link rel="stylesheet" href="./canvas.css">
+
 </head>
 <body>
 
@@ -158,5 +160,6 @@ try {
     </div>
 
     <script src="./canvas.js"></script>
+
 </body>
 </html>
