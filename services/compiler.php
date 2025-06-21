@@ -17,7 +17,12 @@ $code = $_POST['code'];
 $question_id = $_POST['question_id'] ?? null;
 $enrollment_no = $_SESSION['user'] ?? null;
 
-if (!$question_id || !$enrollment_no) {
+// if (!$question_id || !$enrollment_no) {
+//     echo "Error: Missing question_id or user not logged in.";
+//     exit;
+// }
+
+if (!$question_id) {
     echo "Error: Missing question_id or user not logged in.";
     exit;
 }
