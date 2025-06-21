@@ -1,1 +1,1 @@
-# CodeArena
+# CodeArena - A COmpetitive Programming Platform
