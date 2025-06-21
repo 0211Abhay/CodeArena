@@ -4,6 +4,11 @@ require_once '../../config/sql.config.php';
 require '../../vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
 $dotenv->load();
+$IP_ADD = $_ENV['IP_ADD'];
+
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
 
 try {
     if (isset($_GET['question_id'])) {
@@ -134,7 +139,7 @@ try {
                     </div>
                     <div class="editor-actions">
                         <button class="reset">Reset</button>
-                        <button class="run" onclick="executeCode()">Run</button>
+                        <button class="run" onclick="executeCode('<?php echo $IP_ADD; ?>')">Run</button>
                         <button class="submit">Submit</button>
                     </div>
                 </div>

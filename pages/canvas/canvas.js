@@ -157,13 +157,13 @@ resetButton.addEventListener("click", function () {
 //     });
 // }
 
-function executeCode() {
+function executeCode(ipAddress) {
   const questionId = new URLSearchParams(window.location.search).get(
     "question_id"
   );
 
   $.ajax({
-    url: "http://10.80.2.206/CodeArena/services/compiler.php",
+    url: `http://${ipAddress}/CodeArena/services/compiler.php`,
     method: "POST",
     data: {
       language: $("#language-selector").val(),

@@ -1,11 +1,15 @@
 <?php
 
 session_start(); 
-require_once '../config/db.config.php';
+require_once './../config/sql.config.php';
 
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+$dotenv->load();
+$IP_ADD = $_ENV['IP_ADD'];
 
 // Input from frontend
 $language = strtolower($_POST['language']);
@@ -37,7 +41,9 @@ try {
 }
 
 // Judge0 Setup
-$apiUrl = "http://10.80.2.206:2358/submissions?base64_encoded=true&wait=false";
+// $apiUrl = "http://10.80.2.206:2358/submissions?base64_encoded=true&wait=false";
+$apiUrl = "http://$IP_ADD:2358/submissions?base64_encoded=true&wait=false";
+
 $languageIds = [
     "c" => 50,
     "cpp" => 52,
@@ -97,7 +103,9 @@ try {
 }
 
 // Fetch submission result (polling)
-$statusUrl = "http://10.80.2.206:2358/submissions/$token?base64_encoded=true&wait=true";
+// $statusUrl = "http://10.80.2.206:2358/submissions/$token?base64_encoded=true&wait=true";
+$statusUrl = "http://$IP_ADD:2358/submissions/$token?base64_encoded=true&wait=true";
+
 
 while (true) {
     $ch = curl_init();
