@@ -1,7 +1,7 @@
 <?php
 
 session_start(); 
-require_once '../config/db.config.php';
+require_once '../config/sql.config.php';
 
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
