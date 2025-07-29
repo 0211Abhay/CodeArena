@@ -170,7 +170,7 @@ function executeCode() {
 
   for (let i = 1; i <= totalRequests; i++) {
     $.ajax({
-      url: "http://10.80.2.82/CodeArena/services/batch_compile.php",
+      url: "http://10.80.19.77/CodeArena/services/batch_compile.php",
       method: "POST",
       data: {
         language: language,

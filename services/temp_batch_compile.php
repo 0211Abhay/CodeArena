@@ -3,19 +3,11 @@
 session_start();
 require_once '../config/sql.config.php';
 
-// Allow CORS for development
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
 
-// === Setup logging ===
-$logFile = __DIR__ . '/log.txt';
-function writeLog($message) {
-    global $logFile;
-    file_put_contents($logFile, "[" . date('Y-m-d H:i:s') . "] " . $message . "\n", FILE_APPEND);
-}
-
-// === Get POST data ===
+// Get POST data
 $language = $_POST['language'] ?? 'cpp';
 $code = $_POST['code'] ?? '';
 $question_id = $_POST['question_id'] ?? null;
@@ -26,9 +18,9 @@ if (!$question_id) {
 }
 
 // Judge0 API endpoint
-$apiUrl = "http://10.80.19.77:2358/submissions/batch?base64_encoded=true&wait=true";
+$apiUrl = "http://10.80.2.82:2358/submissions/batch?base64_encoded=true&wait=true";
 
-// Language mapping
+// Map language to Judge0 language_id
 $languageIds = [
     "c" => 50,
     "cpp" => 52,
@@ -38,7 +30,7 @@ $languageIds = [
 ];
 $languageId = $languageIds[$language] ?? 71;
 
-// === Fetch testcases ===
+// Fetch all testcases from DB
 try {
     $stmt = $conn->prepare("SELECT stdin, expected_output FROM question_testcases WHERE question_id = :question_id");
     $stmt->execute(['question_id' => $question_id]);
@@ -49,6 +41,18 @@ try {
 
     if (!$testcases || count($testcases) === 0) {
         echo "❌ No testcases found for question_id = $question_id\n\n";
+        $stmtAll = $conn->query("SELECT question_id, stdin, expected_output FROM question_testcases");
+        $all = $stmtAll->fetchAll(PDO::FETCH_ASSOC);
+
+        if (count($all) === 0) {
+            echo "📭 Your question_testcases table is empty.\n";
+        } else {
+            echo "📄 Available question_ids in DB:\n";
+            foreach ($all as $row) {
+                echo " - question_id: {$row['question_id']}, stdin: {$row['stdin']}, expected_output: {$row['expected_output']}\n";
+            }
+        }
+
         exit;
     }
 } catch (PDOException $e) {
@@ -56,7 +60,7 @@ try {
     exit;
 }
 
-// === Prepare batch payload ===
+// Prepare batch payload
 $batch = [];
 foreach ($testcases as $tc) {
     $batch[] = [
@@ -76,56 +80,36 @@ if (empty($batch)) {
     exit;
 }
 
-// === Log request payload ===
-$payload = json_encode(['submissions' => $batch], JSON_PRETTY_PRINT);
-writeLog("=== API CALL START ===\nURL: $apiUrl\nPayload:\n$payload");
-
-// === Submit to Judge0 ===
+// ✅ FIX: Send wrapped payload with "submissions" key
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $apiUrl);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(['submissions' => $batch])); // ✅ FIXED HERE
 curl_setopt($ch, CURLOPT_HTTPHEADER, [
     "Content-Type: application/json"
 ]);
-curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-
-$start = microtime(true);
 $response = curl_exec($ch);
-$end = microtime(true);
-$duration = round($end - $start, 3);
-
-// === Handle cURL errors ===
-if ($response === false) {
-    $error = curl_error($ch);
-    curl_close($ch);
-    writeLog("❌ CURL ERROR: $error\n⏱️ Duration: {$duration}s\n=== API CALL END ===\n");
-    echo "❌ cURL Error: $error\n";
-    exit;
-}
 curl_close($ch);
 
-// === Log API response ===
-writeLog("✅ RESPONSE:\n$response\n⏱️ Duration: {$duration}s\n=== API CALL END ===\n");
+if ($response === false) {
+    echo "Error: Batch submission failed.";
+    exit;
+}
 
-// === Decode and process ===
+// Decode Judge0 response
 $results = json_decode($response, true);
+
+// Check if structure is valid
 if (!isset($results['submissions']) || !is_array($results['submissions'])) {
-    echo "Error: Unexpected response from Judge0 API.\n";
-    echo "Raw response:\n";
+    echo "Error: Unexpected response from Judge0 API.<br>";
     echo "<pre>" . htmlspecialchars($response) . "</pre>";
     exit;
 }
 
-// === Initialize tracking ===
-$total = count($results['submissions']);
-$passed = 0;
-$failed = 0;
-
 $all_passed = true;
 
+// Display results for each testcase
 foreach ($results['submissions'] as $index => $res) {
     $statusId = $res['status']['id'];
     $statusText = $res['status']['description'];
@@ -139,9 +123,6 @@ foreach ($results['submissions'] as $index => $res) {
 
     if ($verdict === "❌ Failed") {
         $all_passed = false;
-        $failed++;
-    } else {
-        $passed++;
     }
 
     echo "Testcase #" . ($index + 1) . ":\n";
@@ -152,12 +133,7 @@ foreach ($results['submissions'] as $index => $res) {
     echo "Verdict: $verdict\n\n";
 }
 
-// === Final Verdict ===
-$successRate = $total > 0 ? round(($passed / $total) * 100, 2) : 0;
-echo "Final Verdict: " . ($all_passed ? "✅ All Testcases Passed" : "❌ Some Testcases Failed") . "\n";
-echo "✅ Passed: $passed\n❌ Failed: $failed\n📊 Success Rate: $successRate%\n";
-
-// === Log verdict stats ===
-writeLog("📊 SUMMARY: Total = $total | ✅ Passed = $passed | ❌ Failed = $failed | Success Rate = $successRate%\n");
+// Final Verdict
+echo "Final Verdict: " . ($all_passed ? "✅ All Testcases Passed" : "❌ Some Testcases Failed");
 
 ?>
