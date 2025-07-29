@@ -66740,3 +66740,272 @@ Payload:
         }
     ]
 }
+[2025-07-29 09:38:08] ✅ RESPONSE:
+[{"token":"942b4fef-5ba9-4715-a1eb-62e984818dc8"},{"token":"89c792fa-1387-4100-bd95-6dece2c7dfcd"},{"token":"cc1159a3-2d9f-4a5b-ab7a-d84d6b41bd80"},{"token":"d26d9031-256e-49b7-bba0-807bba734ef5"},{"token":"c4e5085b-9b32-4666-9c59-9ad49c314e9c"},{"token":"1f568f79-0af7-43ab-9650-7118526046ff"},{"token":"40795b69-a31a-4537-81fa-c16781846ba2"},{"token":"f274f65e-3eb3-4a67-ba08-ab381865d07c"},{"token":"b354dc59-6ada-4a53-ae8e-1eddb7f78737"},{"token":"b58341ad-c56d-4669-868a-bfabaf4d50f8"},{"token":"551c4533-d312-455b-aaeb-754de94a55f1"},{"token":"d3776e80-7515-4c9d-b317-746098c52336"}]
+⏱️ Duration: 2.138s
+=== API CALL END ===
+
+[2025-07-29 09:38:08] === API CALL START ===
+URL: http://10.80.19.77:2358/submissions/batch?base64_encoded=true&wait=true
+Payload:
+{
+    "submissions": [
+        {
+            "source_code": "I2luY2x1ZGUgPHN0ZGlvLmg+CgppbnQgbWFpbigpewogICAgLy8gV3JpdGUgeW91ciBzb2x1dGlvbiBoZXJlCiAgICBwcmludGYoIkhlbGxvLCBXb3JsZCEiKTsKICAgIHJldHVybiAwOwp9",
+            "language_id": 50,
+            "stdin": "Mgoz",
+            "expected_output": "NQ==",
+            "cpu_time_limit": 1,
+            "max_output_size": 10240,
+            "memory_limit": 128000,
+            "stack_limit": 64000
+        },
+        {
+            "source_code": "I2luY2x1ZGUgPHN0ZGlvLmg+CgppbnQgbWFpbigpewogICAgLy8gV3JpdGUgeW91ciBzb2x1dGlvbiBoZXJlCiAgICBwcmludGYoIkhlbGxvLCBXb3JsZCEiKTsKICAgIHJldHVybiAwOwp9",
+            "language_id": 50,
+            "stdin": "MTAKMjA=",
+            "expected_output": "MzA=",
+            "cpu_time_limit": 1,
+            "max_output_size": 10240,
+            "memory_limit": 128000,
+            "stack_limit": 64000
+        },
+        {
+            "source_code": "I2luY2x1ZGUgPHN0ZGlvLmg+CgppbnQgbWFpbigpewogICAgLy8gV3JpdGUgeW91ciBzb2x1dGlvbiBoZXJlCiAgICBwcmludGYoIkhlbGxvLCBXb3JsZCEiKTsKICAgIHJldHVybiAwOwp9",
+            "language_id": 50,
+            "stdin": "Mgoz",
+            "expected_output": "NQ==",
+            "cpu_time_limit": 1,
+            "max_output_size": 10240,
+            "memory_limit": 128000,
+            "stack_limit": 64000
+        },
+        {
+            "source_code": "I2luY2x1ZGUgPHN0ZGlvLmg+CgppbnQgbWFpbigpewogICAgLy8gV3JpdGUgeW91ciBzb2x1dGlvbiBoZXJlCiAgICBwcmludGYoIkhlbGxvLCBXb3JsZCEiKTsKICAgIHJldHVybiAwOwp9",
+            "language_id": 50,
+            "stdin": "MTAKMjA=",
+            "expected_output": "MzA=",
+            "cpu_time_limit": 1,
+            "max_output_size": 10240,
+            "memory_limit": 128000,
+            "stack_limit": 64000
+        },
+        {
+            "source_code": "I2luY2x1ZGUgPHN0ZGlvLmg+CgppbnQgbWFpbigpewogICAgLy8gV3JpdGUgeW91ciBzb2x1dGlvbiBoZXJlCiAgICBwcmludGYoIkhlbGxvLCBXb3JsZCEiKTsKICAgIHJldHVybiAwOwp9",
+            "language_id": 50,
+            "stdin": "Mgoz",
+            "expected_output": "NQ==",
+            "cpu_time_limit": 1,
+            "max_output_size": 10240,
+            "memory_limit": 128000,
+            "stack_limit": 64000
+        },
+        {
+            "source_code": "I2luY2x1ZGUgPHN0ZGlvLmg+CgppbnQgbWFpbigpewogICAgLy8gV3JpdGUgeW91ciBzb2x1dGlvbiBoZXJlCiAgICBwcmludGYoIkhlbGxvLCBXb3JsZCEiKTsKICAgIHJldHVybiAwOwp9",
+            "language_id": 50,
+            "stdin": "MTAKMjA=",
+            "expected_output": "MzA=",
+            "cpu_time_limit": 1,
+            "max_output_size": 10240,
+            "memory_limit": 128000,
+            "stack_limit": 64000
+        },
+        {
+            "source_code": "I2luY2x1ZGUgPHN0ZGlvLmg+CgppbnQgbWFpbigpewogICAgLy8gV3JpdGUgeW91ciBzb2x1dGlvbiBoZXJlCiAgICBwcmludGYoIkhlbGxvLCBXb3JsZCEiKTsKICAgIHJldHVybiAwOwp9",
+            "language_id": 50,
+            "stdin": "Mgoz",
+            "expected_output": "NQ==",
+            "cpu_time_limit": 1,
+            "max_output_size": 10240,
+            "memory_limit": 128000,
+            "stack_limit": 64000
+        },
+        {
+            "source_code": "I2luY2x1ZGUgPHN0ZGlvLmg+CgppbnQgbWFpbigpewogICAgLy8gV3JpdGUgeW91ciBzb2x1dGlvbiBoZXJlCiAgICBwcmludGYoIkhlbGxvLCBXb3JsZCEiKTsKICAgIHJldHVybiAwOwp9",
+            "language_id": 50,
+            "stdin": "MTAKMjA=",
+            "expected_output": "MzA=",
+            "cpu_time_limit": 1,
+            "max_output_size": 10240,
+            "memory_limit": 128000,
+            "stack_limit": 64000
+        },
+        {
+            "source_code": "I2luY2x1ZGUgPHN0ZGlvLmg+CgppbnQgbWFpbigpewogICAgLy8gV3JpdGUgeW91ciBzb2x1dGlvbiBoZXJlCiAgICBwcmludGYoIkhlbGxvLCBXb3JsZCEiKTsKICAgIHJldHVybiAwOwp9",
+            "language_id": 50,
+            "stdin": "Mgoz",
+            "expected_output": "NQ==",
+            "cpu_time_limit": 1,
+            "max_output_size": 10240,
+            "memory_limit": 128000,
+            "stack_limit": 64000
+        },
+        {
+            "source_code": "I2luY2x1ZGUgPHN0ZGlvLmg+CgppbnQgbWFpbigpewogICAgLy8gV3JpdGUgeW91ciBzb2x1dGlvbiBoZXJlCiAgICBwcmludGYoIkhlbGxvLCBXb3JsZCEiKTsKICAgIHJldHVybiAwOwp9",
+            "language_id": 50,
+            "stdin": "MTAKMjA=",
+            "expected_output": "MzA=",
+            "cpu_time_limit": 1,
+            "max_output_size": 10240,
+            "memory_limit": 128000,
+            "stack_limit": 64000
+        },
+        {
+            "source_code": "I2luY2x1ZGUgPHN0ZGlvLmg+CgppbnQgbWFpbigpewogICAgLy8gV3JpdGUgeW91ciBzb2x1dGlvbiBoZXJlCiAgICBwcmludGYoIkhlbGxvLCBXb3JsZCEiKTsKICAgIHJldHVybiAwOwp9",
+            "language_id": 50,
+            "stdin": "Mg0KMw==",
+            "expected_output": "NQ==",
+            "cpu_time_limit": 1,
+            "max_output_size": 10240,
+            "memory_limit": 128000,
+            "stack_limit": 64000
+        },
+        {
+            "source_code": "I2luY2x1ZGUgPHN0ZGlvLmg+CgppbnQgbWFpbigpewogICAgLy8gV3JpdGUgeW91ciBzb2x1dGlvbiBoZXJlCiAgICBwcmludGYoIkhlbGxvLCBXb3JsZCEiKTsKICAgIHJldHVybiAwOwp9",
+            "language_id": 50,
+            "stdin": "MTANCjIw",
+            "expected_output": "MzA=",
+            "cpu_time_limit": 1,
+            "max_output_size": 10240,
+            "memory_limit": 128000,
+            "stack_limit": 64000
+        }
+    ]
+}
+[2025-07-29 09:38:10] ✅ RESPONSE:
+[{"token":"55731f0c-e9a8-453d-a05d-7f7e49ef2ad1"},{"token":"35de37bf-ab8c-4e38-9329-b11e786a883c"},{"token":"9d2bd0fc-1f7f-4a73-ab5c-502b1947db75"},{"token":"54058124-8e7c-423f-8568-f673ccdd1124"},{"token":"2d0f284a-2135-4cc2-aca6-330beacc48b6"},{"token":"effaea43-7215-4669-b37e-5b56e4cb0b13"},{"token":"10c8b8e4-c83f-4f67-9c06-cf57d1511ab6"},{"token":"b02e9b69-84f7-4753-930a-f592ceb13546"},{"token":"1383ad55-a863-432b-9e75-83f951a98c32"},{"token":"ced4d44f-057e-4820-8dd3-e23fa84ae9ae"},{"token":"dc1c3772-aac3-4793-a468-0d0b4978fbba"},{"token":"16dd1e2b-7ddb-426d-80df-59490b2811ab"}]
+⏱️ Duration: 2.024s
+=== API CALL END ===
+
+[2025-07-29 09:38:10] === API CALL START ===
+URL: http://10.80.19.77:2358/submissions/batch?base64_encoded=true&wait=true
+Payload:
+{
+    "submissions": [
+        {
+            "source_code": "I2luY2x1ZGUgPHN0ZGlvLmg+CgppbnQgbWFpbigpewogICAgLy8gV3JpdGUgeW91ciBzb2x1dGlvbiBoZXJlCiAgICBwcmludGYoIkhlbGxvLCBXb3JsZCEiKTsKICAgIHJldHVybiAwOwp9",
+            "language_id": 50,
+            "stdin": "Mgoz",
+            "expected_output": "NQ==",
+            "cpu_time_limit": 1,
+            "max_output_size": 10240,
+            "memory_limit": 128000,
+            "stack_limit": 64000
+        },
+        {
+            "source_code": "I2luY2x1ZGUgPHN0ZGlvLmg+CgppbnQgbWFpbigpewogICAgLy8gV3JpdGUgeW91ciBzb2x1dGlvbiBoZXJlCiAgICBwcmludGYoIkhlbGxvLCBXb3JsZCEiKTsKICAgIHJldHVybiAwOwp9",
+            "language_id": 50,
+            "stdin": "MTAKMjA=",
+            "expected_output": "MzA=",
+            "cpu_time_limit": 1,
+            "max_output_size": 10240,
+            "memory_limit": 128000,
+            "stack_limit": 64000
+        },
+        {
+            "source_code": "I2luY2x1ZGUgPHN0ZGlvLmg+CgppbnQgbWFpbigpewogICAgLy8gV3JpdGUgeW91ciBzb2x1dGlvbiBoZXJlCiAgICBwcmludGYoIkhlbGxvLCBXb3JsZCEiKTsKICAgIHJldHVybiAwOwp9",
+            "language_id": 50,
+            "stdin": "Mgoz",
+            "expected_output": "NQ==",
+            "cpu_time_limit": 1,
+            "max_output_size": 10240,
+            "memory_limit": 128000,
+            "stack_limit": 64000
+        },
+        {
+            "source_code": "I2luY2x1ZGUgPHN0ZGlvLmg+CgppbnQgbWFpbigpewogICAgLy8gV3JpdGUgeW91ciBzb2x1dGlvbiBoZXJlCiAgICBwcmludGYoIkhlbGxvLCBXb3JsZCEiKTsKICAgIHJldHVybiAwOwp9",
+            "language_id": 50,
+            "stdin": "MTAKMjA=",
+            "expected_output": "MzA=",
+            "cpu_time_limit": 1,
+            "max_output_size": 10240,
+            "memory_limit": 128000,
+            "stack_limit": 64000
+        },
+        {
+            "source_code": "I2luY2x1ZGUgPHN0ZGlvLmg+CgppbnQgbWFpbigpewogICAgLy8gV3JpdGUgeW91ciBzb2x1dGlvbiBoZXJlCiAgICBwcmludGYoIkhlbGxvLCBXb3JsZCEiKTsKICAgIHJldHVybiAwOwp9",
+            "language_id": 50,
+            "stdin": "Mgoz",
+            "expected_output": "NQ==",
+            "cpu_time_limit": 1,
+            "max_output_size": 10240,
+            "memory_limit": 128000,
+            "stack_limit": 64000
+        },
+        {
+            "source_code": "I2luY2x1ZGUgPHN0ZGlvLmg+CgppbnQgbWFpbigpewogICAgLy8gV3JpdGUgeW91ciBzb2x1dGlvbiBoZXJlCiAgICBwcmludGYoIkhlbGxvLCBXb3JsZCEiKTsKICAgIHJldHVybiAwOwp9",
+            "language_id": 50,
+            "stdin": "MTAKMjA=",
+            "expected_output": "MzA=",
+            "cpu_time_limit": 1,
+            "max_output_size": 10240,
+            "memory_limit": 128000,
+            "stack_limit": 64000
+        },
+        {
+            "source_code": "I2luY2x1ZGUgPHN0ZGlvLmg+CgppbnQgbWFpbigpewogICAgLy8gV3JpdGUgeW91ciBzb2x1dGlvbiBoZXJlCiAgICBwcmludGYoIkhlbGxvLCBXb3JsZCEiKTsKICAgIHJldHVybiAwOwp9",
+            "language_id": 50,
+            "stdin": "Mgoz",
+            "expected_output": "NQ==",
+            "cpu_time_limit": 1,
+            "max_output_size": 10240,
+            "memory_limit": 128000,
+            "stack_limit": 64000
+        },
+        {
+            "source_code": "I2luY2x1ZGUgPHN0ZGlvLmg+CgppbnQgbWFpbigpewogICAgLy8gV3JpdGUgeW91ciBzb2x1dGlvbiBoZXJlCiAgICBwcmludGYoIkhlbGxvLCBXb3JsZCEiKTsKICAgIHJldHVybiAwOwp9",
+            "language_id": 50,
+            "stdin": "MTAKMjA=",
+            "expected_output": "MzA=",
+            "cpu_time_limit": 1,
+            "max_output_size": 10240,
+            "memory_limit": 128000,
+            "stack_limit": 64000
+        },
+        {
+            "source_code": "I2luY2x1ZGUgPHN0ZGlvLmg+CgppbnQgbWFpbigpewogICAgLy8gV3JpdGUgeW91ciBzb2x1dGlvbiBoZXJlCiAgICBwcmludGYoIkhlbGxvLCBXb3JsZCEiKTsKICAgIHJldHVybiAwOwp9",
+            "language_id": 50,
+            "stdin": "Mgoz",
+            "expected_output": "NQ==",
+            "cpu_time_limit": 1,
+            "max_output_size": 10240,
+            "memory_limit": 128000,
+            "stack_limit": 64000
+        },
+        {
+            "source_code": "I2luY2x1ZGUgPHN0ZGlvLmg+CgppbnQgbWFpbigpewogICAgLy8gV3JpdGUgeW91ciBzb2x1dGlvbiBoZXJlCiAgICBwcmludGYoIkhlbGxvLCBXb3JsZCEiKTsKICAgIHJldHVybiAwOwp9",
+            "language_id": 50,
+            "stdin": "MTAKMjA=",
+            "expected_output": "MzA=",
+            "cpu_time_limit": 1,
+            "max_output_size": 10240,
+            "memory_limit": 128000,
+            "stack_limit": 64000
+        },
+        {
+            "source_code": "I2luY2x1ZGUgPHN0ZGlvLmg+CgppbnQgbWFpbigpewogICAgLy8gV3JpdGUgeW91ciBzb2x1dGlvbiBoZXJlCiAgICBwcmludGYoIkhlbGxvLCBXb3JsZCEiKTsKICAgIHJldHVybiAwOwp9",
+            "language_id": 50,
+            "stdin": "Mg0KMw==",
+            "expected_output": "NQ==",
+            "cpu_time_limit": 1,
+            "max_output_size": 10240,
+            "memory_limit": 128000,
+            "stack_limit": 64000
+        },
+        {
+            "source_code": "I2luY2x1ZGUgPHN0ZGlvLmg+CgppbnQgbWFpbigpewogICAgLy8gV3JpdGUgeW91ciBzb2x1dGlvbiBoZXJlCiAgICBwcmludGYoIkhlbGxvLCBXb3JsZCEiKTsKICAgIHJldHVybiAwOwp9",
+            "language_id": 50,
+            "stdin": "MTANCjIw",
+            "expected_output": "MzA=",
+            "cpu_time_limit": 1,
+            "max_output_size": 10240,
+            "memory_limit": 128000,
+            "stack_limit": 64000
+        }
+    ]
+}
+[2025-07-29 09:38:11] ✅ RESPONSE:
+[{"token":"294f655a-04d2-4d49-ad59-305eaf1f8e9d"},{"token":"6b0a2398-afae-4efb-a7d6-18f76ea806a1"},{"token":"eacb01c8-a4c7-4ff6-879b-13e6d4dae5af"},{"token":"b88c8c5a-0f5c-4fff-b6f0-9c46dd6d64b7"},{"token":"971db337-f54c-4407-8638-bf0a9c32eaf9"},{"token":"8d8f457b-3afb-430e-9dc0-8f70d761aaa6"},{"token":"ee6cc885-3148-48d6-b7b8-a629827085ad"},{"token":"70dfbf9d-a0c5-46f2-b7a4-948d68a31281"},{"token":"b3d3a9a4-7804-41b9-b751-d68accbb9e7d"},{"token":"d61787a0-8118-4fc1-b126-07bb3fe96575"},{"token":"f4178569-1882-48ad-b7c1-2fdda8e76a5a"},{"token":"53616865-b668-44ab-912a-4d33c0b59ada"}]
+⏱️ Duration: 1.261s
+=== API CALL END ===
+
